@@ -1,0 +1,16 @@
+<template>
+    <lightning-card>
+        <template if:true={listOfAttractions.data}>
+            <div class="slds-scrollable_y">
+                <lightning-layout horizontal-align="center" multiple-rows>
+                    <template for:each={listOfAttractions.data} for:item="attr">
+                        <lightning-layout-item key={attr.attractionObj.Id} padding="around-small" size="12" small-device-size="6"
+                            medium-device-size="4" large-device-size="3">
+                            <c-attraction-buy-plan-tile attraction-details={attr}></c-attraction-buy-plan-tile>
+                        </lightning-layout-item>
+                    </template>
+                </lightning-layout>
+            </div>
+        </template>
+    </lightning-card>
+</template>

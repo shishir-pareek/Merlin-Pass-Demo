@@ -1,0 +1,29 @@
+<template>
+    <lightning-record-edit-form 
+        object-api-name="Payment__c"
+        onsuccess={handleSuccess}>
+        <lightning-messages></lightning-messages>
+        <lightning-input-field field-name='Customer__c' required='true' value={contactId} disabled></lightning-input-field>
+        <lightning-input-field field-name='Payment_Method__c' required='true'></lightning-input-field>
+        <lightning-input-field field-name='Gross_Price__c' required='true' value={grossPrice} disabled></lightning-input-field>
+        <lightning-input-field field-name='Discount_Applied__c' required='true' value={discount} disabled></lightning-input-field>
+        <lightning-input-field field-name='Net_Price__c' required='true' value={netPrice} disabled></lightning-input-field>
+        <lightning-input-field field-name='Card_Number__c' required='true' max-length='16'></lightning-input-field>
+        <lightning-input type="number" name="CVV Number" label="CVV Number" max="999" max-length='3' value={cvvnumber} required='true'></lightning-input>
+        <lightning-input type="Text" label="Expiry Date" required='true' value={expDate}></lightning-input>
+        
+        <template if:true={showOTP}>
+            <div class="slds-p-around_medium lgc-bg">
+                <lightning-input type="number" required='true' label="Enter OTP"></lightning-input>
+            </div>
+        </template>
+        <template if:false={showOTP}>
+            <lightning-button class="slds-m-top_small"  label="Proceed" onclick={showOTPField}>
+            </lightning-button>
+        </template>
+        <template if:true={showOTP}>
+            <lightning-button class="slds-m-top_small"  type="submit" label="Submit">
+            </lightning-button>
+        </template>
+    </lightning-record-edit-form>
+</template>

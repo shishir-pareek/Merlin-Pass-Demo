@@ -1,0 +1,20 @@
+<template>
+    <a href="#" target="_self" class="list-item-content-wrapper" onclick={handleClick}>
+        <div class="slds-grid slds-gutters" style="padding:1rem;">
+            <div class="slds-col slds-size_1-of-3">
+                <lightning-formatted-rich-text value={attractionObject.attractionObj.Location_Image__c}></lightning-formatted-rich-text>
+            </div>
+            <div class="slds-col slds-size_2-of-3">
+                <div class="slds-text-heading_large">
+                    <h2>{attractionObject.attractionObj.Name}</h2>
+                </div>
+                <div class="slds-text-heading_medium">
+                    <p>{attractionObject.attractionObj.Short_Description__c}</p>
+                </div>
+            </div>  
+        </div>     
+    </a>
+    <template if:true={openModal}>
+        <c-attraction-detail-component onclose={handleModalClosed} attraction-obj-details={attractionObject}></c-attraction-detail-component>
+    </template>
+</template>

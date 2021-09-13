@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="Attractions">
+        <ul>
+            <template if:true={listOfAttractions.data}>
+                <template for:each={listOfAttractions.data} for:item="attr">
+                    <li key={attr.Id}>
+                        <c-attractions-tile-component attraction-object={attr}></c-attractions-tile-component>
+                    </li>  
+                </template>
+            </template>
+        </ul>
+    </lightning-card>
+</template>

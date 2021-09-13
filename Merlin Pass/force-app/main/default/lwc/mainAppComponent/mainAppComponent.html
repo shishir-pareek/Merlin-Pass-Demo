@@ -1,0 +1,19 @@
+<template>
+    <div class="slds-grid slds-gutters">
+        <div class="slds-col slds-size_2-of-3">
+            <lightning-card class="slds-align-middle">
+                <lightning-tabset variant="scoped">
+                    <lightning-tab label="Buy Pass">
+                        <c-attraction-buy-plan-component></c-attraction-buy-plan-component>
+                    </lightning-tab>
+                    <lightning-tab label="Attractions">
+                        <c-attractions-component></c-attractions-component>
+                    </lightning-tab>
+                </lightning-tabset>
+            </lightning-card>
+        </div>
+        <div class="slds-col slds-size_1-of-3">
+            <c-added-attraction-for-pass-cart></c-added-attraction-for-pass-cart>
+        </div>
+    </div>
+</template>

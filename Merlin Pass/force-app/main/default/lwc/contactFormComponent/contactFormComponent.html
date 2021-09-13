@@ -1,0 +1,19 @@
+<template>
+    <lightning-record-edit-form 
+                    object-api-name="Contact"  
+                    onsuccess={handleSuccess} 
+                    onsubmit={handleSubmit}>
+                    <lightning-messages>
+                    </lightning-messages>
+                    <lightning-input-field field-name='Name'></lightning-input-field>
+                    <lightning-input-field field-name='Email' required='true'></lightning-input-field>
+                    <lightning-input-field field-name='Age__c' required='true'></lightning-input-field>
+                    <lightning-input-field field-name='MobilePhone' required='true'></lightning-input-field>
+                    <lightning-input-field field-name='Expected_Date_Of_Travel__c' required='true'></lightning-input-field>
+                    <!--<div class="slds-p-around_medium lgc-bg">
+                        <lightning-input type="file" required='true' label="Photo" accept="image/png, image/jpg, image/jpeg"></lightning-input>
+                    </div>-->
+                    <lightning-button class="slds-m-top_small" type="submit" label="Proceed To Payment">
+                    </lightning-button>
+                </lightning-record-edit-form>
+</template>
